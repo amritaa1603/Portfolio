@@ -10,7 +10,7 @@ const Home = () => {
         <div className="hero-left">
 
           <div className="hero-badge">
-            <Sparkles size={16} />
+             <span>✨</span>
             <span>hey there</span>
           </div>
 
@@ -32,12 +32,12 @@ const Home = () => {
 
           <div className="hero-buttons">
             <a href="/resumeee.pdf" target="blank" className="btn primary">
-              <Code2 size={18} />
+              
              Resume
             </a>
 
             <a href="#about" className="btn secondary">
-              <Heart size={18} />
+              
               About Me
             </a>
           </div>
