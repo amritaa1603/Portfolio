@@ -46,7 +46,7 @@ const projects = [
       "NumPy",
       "Google Colab",
     ],
-    live: "",
+    live: "https://ev-prediction-model.streamlit.app/#prediction-summary",
     github: "https://github.com/amritaa1603/EV-prediction-model",
   },
 
@@ -63,7 +63,7 @@ const projects = [
       "Demonstrated layered security concepts across cloud environments",
     ],
     tech: ["Django REST", "React", "JWT", "RBAC", "Vite"],
-    live: "",
+    live: "https://multi-layer-cloud-security-simulator-5ap6z40kr.vercel.app/",
     github: "https://github.com/amritaa1603/Multi-Layer-Cloud-Security-Simulator",
   },
 ];
