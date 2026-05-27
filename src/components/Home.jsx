@@ -1,5 +1,5 @@
 import "./Home.css";
-import { Sparkles, Code2, Heart } from "lucide-react";
+
 
 const Home = () => {
   return (
