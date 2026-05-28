@@ -31,81 +31,26 @@ I enjoy learning new technologies and creating projects that solve practical pro
 
 ---
 
+
+
 # 🛠️ Tech Stack
 
 ## Frontend
-
-* HTML
-* CSS
-* JavaScript
-* React.js
-* Tailwind CSS
-
-## Backend
-
-* Node.js
-* Express.js
-
-## Database
-
-* MongoDB
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- Vite
 
 ## Tools & Platforms
+- Git
+- GitHub
+- VS Code
+- Vercel
 
-* Git & GitHub
-* VS Code
-* Postman
-* Render
-* Vercel
+## Configuration & Development
+- npm
 
----
-
-# 📂 Featured Projects
-
-## 🔐 Multi-Layer Cloud Security Simulator
-
-A cloud security simulation project demonstrating security layers in:
-
-* IaaS
-* PaaS
-* SaaS
-
-### Features
-
-* User authentication
-* Security visualization
-* Cloud layer simulations
-* Interactive frontend
-
-### Tech Used
-
-React.js, Node.js, Express.js, MongoDB
-
----
-
-## 💻 Portfolio Website
-
-A personal portfolio website to showcase my skills, projects, and achievements.
-
-### Features
-
-* Responsive design
-* Smooth UI
-* Project cards
-* Contact section
-
-### Tech Used
-
-React.js, CSS, JavaScript
-
----
-
-# 📜 Certifications
-
-* Cybersecurity Fundamentals
-* Web Development Certifications
-* Cloud Computing Basics
-* CTF Participation Certificates
 
 ---
 
@@ -131,52 +76,15 @@ React.js, CSS, JavaScript
 * Backend APIs
 * Database Management
 
----
 
-# 📸 Screenshots
 
-Add screenshots of your portfolio or projects here.
 
-```md
-![Portfolio Screenshot](./images/portfolio.png)
-```
-
----
-
-# ⚙️ Installation & Setup
-
-Clone the repository:
-
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-```
-
-Go to the project directory:
-
-```bash
-cd your-repo-name
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
----
 
 # 🔗 Connect With Me
 
-* LinkedIn: [https://linkedin.com/in/your-link](https://linkedin.com/in/your-link)
-* GitHub: [https://github.com/your-username](https://github.com/your-username)
-* Portfolio: [https://your-portfolio-link.com](https://your-portfolio-link.com)
-* Email: [your-email@example.com](mailto:your-email@example.com)
+* LinkedIn: https://www.linkedin.com/in/amrita-jadhav-3ba11728a
+* Portfolio:https://www.linkedin.com/in/amrita-jadhav-3ba11728a
+* Email: amritajdhv16033@gmail.com
 
 ---
 
