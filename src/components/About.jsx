@@ -91,6 +91,12 @@ const About = () => {
                    3.    Alongside coursework, I actively work on improving my
                     frontend development skills and learning cybersecurity fundamentals.
                   </p>
+                  <p>
+                   4.    <p>
+  I'm driven by curiosity — whether it's understanding how a protocol works under the hood, 
+  finding a vulnerability in a web app, or building a frontend that's both beautiful and secure.
+</p>
+                  </p>
                 </div>
               ) : (
                 <>
