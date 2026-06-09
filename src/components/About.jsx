@@ -73,19 +73,23 @@ const About = () => {
                 <div className="edu-expanded">
                   <h2>Education</h2>
                   <p>
-                    I am currently pursuing my undergraduate degree in
-                    Engineering, where I am building a strong foundation in
-                    programming, software development, and problem-solving.
-                  </p>
+                    1.    I'm currently a 4th year Integrated MTECH (Cybersecurity ) student
+  in my academic journey I have built strong foundations in networking, operating systems, 
+  and computer architecture — the core knowledge that cybersecurity runs on. 
+  Alongside coursework, I actively sharpen my skills in web application security, 
+  Linux, and secure web development through hands-on labs and real-world projects.
+</p>
+<br />
                   <p>
-                    My academic journey has helped me understand core technical
+                   
+                    2.      My academic journey has helped me understand core technical
                     concepts while also encouraging independent learning and
                     project-based exploration.
                   </p>
+                  <br />
                   <p>
-                    Alongside coursework, I actively work on improving my
-                    frontend development skills and creating interactive user
-                    experiences.
+                   3.    Alongside coursework, I actively work on improving my
+                    frontend development skills and learning cybersecurity fundamentals.
                   </p>
                 </div>
               ) : (
@@ -124,11 +128,11 @@ const About = () => {
                     <span>React.js</span>
                     <span>Chart.js</span>
                   </div>
-                  <h4>Backend & Database</h4>
+                  <h4>Security</h4>
                   <div className="tags">
-                    <span>Django REST</span>
-                    <span>REST APIs</span>
-                    <span>MySQL</span>
+                    <span>Vulnerability assesment</span>
+                    <span>JWT Authentication</span>
+                    <span>RBAC</span>
                   </div>
                   <h4>Tools</h4>
                   <div className="tags">
@@ -137,12 +141,13 @@ const About = () => {
                     <span>VS Code</span>
                     <span>Google Colab</span>
                   </div>
-                  <h4>Libraries</h4>
+                  <h4>Networking & Systems</h4>
                   <div className="tags">
-                    <span>Pandas</span>
-                    <span>NumPy</span>
-                    <span>Scikit-learn</span>
-                    <span>JWT</span>
+                    <span>TCP/IP</span>
+                    <span>DNS</span>
+                    <span>HTTP/HTTPS</span>
+                    <span>Linux fundamentals</span>
+                    
                   </div>
                 </>
               ) : (
@@ -241,18 +246,17 @@ const About = () => {
               {activeGrid === 5 ? (
                 <>
                   <h2 style={{ color: "white" }}>Currently Working On</h2>
-                  <h4>Chemical Equipment Parameter Visualizer</h4>
+                  <h4>Currently working as Security Analyst intern @ParshWebCraft</h4>
                   <p style={{ color: "white" }}>
-                    A hybrid analytics platform using Django REST API, React (web) and PyQtS (desktop) with real-time data sync, Chart.js visualizations and PDF report generation.
+                    • Assisting in identifying, analyzing, and reporting security vulnerabilities
+<br />• Supporting application security testing and basic penetration testing processes
+<br />• Monitoring system security, authentication workflows, and access controls
+<br />• Collaborating with development teams to improve platform security and performance
+<br />• Participating in security research, documentation, and best practice implementation
+<br />• Supporting secure API integrations, database protection, and infrastructure-level security practices
+
                   </p>
-                  <h4>EV Vehicle & Charging Demand Prediction</h4>
-                  <p style={{ color: "white" }}>
-                    A machine learning model built with Scikit-learn, Pandas and NumPy trained and evaluated on Google Colab to predict EV charging demand.
-                  </p>
-                  <h4>Multi-Layer Cloud Security Simulator</h4>
-                  <p style={{ color: "white" }}>
-                    Full-stack security simulator using Django REST API and React Vite with JWT auth, RBAC, firewall filtering and an interactive monitoring dashboard.
-                  </p>
+                  
                 </>
               ) : (
                 <>

@@ -1,5 +1,5 @@
 import "./Home.css";
-
+import { ReactTyped } from "react-typed";
 
 const Home = () => {
   return (
@@ -14,20 +14,26 @@ const Home = () => {
             <span>hey there</span>
           </div>
 
-          <h1 className="hero-title">
-            I'm <span>Amrita Jadhav</span>
-          </h1>
+          
+<h1 className="hero-title" style={{ animation: "fadeSlideUp 0.8s ease 0.3s both" }}>
+  <ReactTyped
+    strings={["I'm <br/> Amrita Jadhav "]}
+    
+    typeSpeed={50}
+    startDelay={300}
+    showCursor={false}
+  />
+</h1>
 
-          <p className="hero-subtitle">
-            Frontend Developer, CSE Student & Creative Builder
-            passionate about crafting beautiful and interactive
+          <p className="hero-subtitle" style={{ animation: "fadeSlideUp 0.8s ease 0.6s both" }}>
+            Frontend Developer, CSE Student & Cybersecurity enthusiast
+            passionate about crafting Beautiful, Interactive,Secure
             digital experiences.
           </p>
 
-          <p className="hero-desc">
-            Welcome to my little corner of the internet where
-            I build modern web applications and continuously
-            learn new technologies.
+          <p className="hero-desc" style={{ animation: "fadeSlideUp 0.8s ease 0.9s both" }}>
+           I craft modern frontends,Enhance Security, and hunt vulnerabilities 
+  to make the web a little less broken.
           </p>
 
           <div className="hero-buttons">

@@ -14,7 +14,8 @@ const Footer = () => {
             <p className="footer-tagline">Frontend Developer & CS Engineer</p>
           </div>
           <p className="footer-bio">
-            I build responsive, interactive web experiences — from clean UIs to full-stack applications.
+            I build responsive, interactive web experiences from clean UIs to web applications.
+           -- Cybersecurity enthusiast
           </p>
           <div className="footer-socials">
             <a href="https://github.com/amritaa1603" target="_blank" rel="noreferrer"><FaGithub size={20} /></a>

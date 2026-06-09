@@ -86,8 +86,7 @@ const Projects = () => {
 
           <p className="hero-sub">
             I'm a Computer Science Engineering student passionate about
-            building real-world applications — from ML models to
-            full-stack platforms.
+            building real-world applications — Secure websites---Cybersecurity Enthusiast
           </p>
 
           <div className="hero-stats">

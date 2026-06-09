@@ -98,7 +98,7 @@ export default function Contact({ isOpen, onClose }) {
               <label htmlFor="name">Full Name</label>
               <input
                 id="name" name="name" type="text"
-                placeholder="Amrita Sharma"
+                placeholder="Your name here"
                 value={form.name}
                 onChange={handleChange}
                 required
@@ -109,7 +109,7 @@ export default function Contact({ isOpen, onClose }) {
               <label htmlFor="number">Phone Number</label>
               <input
                 id="number" name="number" type="tel"
-                placeholder="+91 98765 43210"
+                placeholder="+91 ----------"
                 value={form.number}
                 onChange={handleChange}
                 required
