@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
-import Projects from "./pages/Projects"
+import Projects from "./components/Projects"
 
 import Footer from './components/Footer'
 
@@ -12,8 +12,8 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<><Home /><About /></>} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/" element={<><Home /><About /><Projects /></>} />
+       
       
       </Routes>
       <Footer />
