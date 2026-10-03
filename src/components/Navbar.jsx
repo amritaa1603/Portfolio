@@ -13,6 +13,7 @@ export default function Navbar() {
           <li><a href="/">Home</a></li>
           <li><a href="/#about">About</a></li>
           <li><a href="/projects">Projects</a></li>
+          <li><a href="/cert">Certificates</a></li>
           <li>
             <button
               className="nav-contact-btn"
