@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
 import Projects from "./components/Projects"
-import Cert from "./components/Cert"
+import Cert from "./components/cert"
 import Footer from './components/Footer'
 import Recognition from './components/Recognition'
 
