@@ -1,0 +1,322 @@
+:root {
+  --pink: #e889a8;
+  --dark: #57031f;
+  --rose: #c4597a;
+}
+
+.recognition-page {
+  background: #faf4f2;
+  padding: 6rem 8%;
+}
+
+/* ===== STATEMENT HERO ===== */
+
+.statement-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 1300px;
+  margin: 0 auto 6rem;
+  flex-wrap: wrap;
+}
+
+.statement-heading {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.08;
+  color: var(--dark);
+  text-transform: uppercase;
+  max-width: 650px;
+  margin: 0;
+
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transition: clip-path 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+}
+
+.statement-heading.revealed {
+  clip-path: inset(0 0 0% 0);
+  opacity: 1;
+}
+
+.statement-side {
+  max-width: 380px;
+  padding-top: 0.5rem;
+
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
+}
+
+.statement-side.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.statement-side p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #7a6265;
+  margin-bottom: 1rem;
+}
+
+.statement-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--dark);
+  text-decoration: none;
+  padding-bottom: 4px;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.statement-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.5px;
+  width: 100%;
+  background: var(--dark);
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform 0.35s ease, background 0.3s ease;
+}
+
+.statement-link:hover::after {
+  transform: scaleX(1);
+  background: var(--pink);
+}
+
+/* ===== DOCUMENT SHOWCASE ===== */
+
+.doc-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.doc-card {
+  position: relative;
+  cursor: pointer;
+  padding: 1.5rem;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.doc-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== CURSOR-FOLLOW BLOB ===== */
+
+.doc-blob-pos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 0;
+  /* no CSS transition here — position is eased via requestAnimationFrame
+     in JS for a smooth continuous trail instead of a stepped one */
+  will-change: transform;
+}
+
+.doc-blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #fff4e9, #ffe3eb 70%);
+  transform: translate(-50%, -50%) scale(0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.doc-blob.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.doc-image-wrap {
+  position: relative;
+  z-index: 1;
+  width: 72%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fff;
+  border: 1.5px solid rgba(87, 3, 31, 0.1);
+  box-shadow: 0 20px 40px rgba(87, 3, 31, 0.08);
+
+  /* curtain reveal */
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.doc-card.revealed .doc-image-wrap {
+  clip-path: inset(0 0 0% 0);
+}
+
+.doc-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s ease;
+}
+
+.doc-card:hover .doc-image {
+  transform: scale(1.04);
+}
+
+.doc-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #fff0f4, #fdeef1);
+  border: 1.5px dashed rgba(232, 137, 168, 0.5);
+  color: var(--rose);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem;
+}
+
+.doc-title {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.doc-meta {
+  position: relative;
+  z-index: 1;
+  font-size: 0.85rem;
+  color: #9a8286;
+  margin-top: 0.2rem;
+}
+
+/* ===== LIGHTBOX ===== */
+
+.recog-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 0, 16, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 2rem;
+  animation: recog-fade-in 0.25s ease;
+}
+
+@keyframes recog-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.recog-lightbox-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  max-width: min(700px, 92vw);
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  animation: recog-pop-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes recog-pop-in {
+  from { opacity: 0; transform: scale(0.9) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.recog-lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.recog-lightbox-caption {
+  font-size: 0.85rem;
+  color: var(--dark);
+  font-weight: 600;
+  text-align: center;
+}
+
+.recog-lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--dark);
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.recog-lightbox-close:hover {
+  background: var(--rose);
+  transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 800px) {
+  .recognition-page {
+    padding: 4rem 6%;
+  }
+  .statement-heading {
+    font-size: 2rem;
+  }
+  .doc-showcase {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .doc-image-wrap {
+    width: 90%;
+  }
+  .doc-blob {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statement-heading,
+  .statement-side,
+  .doc-card,
+  .doc-image-wrap,
+  .doc-image {
+    transition: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

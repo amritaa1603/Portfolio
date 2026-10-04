@@ -1,0 +1,480 @@
+:root {
+  --pink: #e889a8;
+  --dark: #57031f;
+  --rose: #c4597a;
+}
+
+/* ===== PAGE LAYOUT ===== */
+
+.certs-page {
+  display: flex;
+  gap: 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 5rem 6% 6rem;
+  background: #faf4f2;
+  min-height: 100vh;
+  align-items: flex-start;
+}
+
+/* ===== SIDEBAR ===== */
+
+.certs-sidebar {
+  flex: 0 0 260px;
+  position: sticky;
+  top: 5rem;
+}
+
+.sidebar-heading {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.sidebar-heading span {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.sidebar-sub {
+  font-size: 0.9rem;
+  color: #8a7175;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.issuer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.issuer-nav li {
+  font-size: 0.92rem;
+  color: #8a7175;
+  cursor: pointer;
+  position: relative;
+  padding-left: 18px;
+  transition: color 0.25s ease;
+}
+
+.issuer-nav li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pink);
+  transition: transform 0.25s ease;
+}
+
+.issuer-nav li:hover {
+  color: var(--dark);
+}
+
+.issuer-nav li.active {
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.issuer-nav li.active::before {
+  transform: translateY(-50%) scale(1);
+}
+
+.reset-btn {
+  background: var(--dark);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.reset-btn:hover {
+  background: var(--rose);
+  transform: translateY(-2px);
+}
+
+/* ===== BENTO GRID ===== */
+
+.certs-grid-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+}
+
+/* pattern: 3 cards spanning 2 cols, then 2 cards spanning 3 cols — repeats every 5 */
+.bento-grid > *:nth-child(5n+1),
+.bento-grid > *:nth-child(5n+2),
+.bento-grid > *:nth-child(5n+3) {
+  grid-column: span 2;
+}
+
+.bento-grid > *:nth-child(5n+4),
+.bento-grid > *:nth-child(5n) {
+  grid-column: span 3;
+}
+
+/* ===== CARD ===== */
+
+.cert-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 230px;
+
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  border: 1.5px solid transparent;
+}
+
+.cert-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cert-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 22px 44px rgba(87, 3, 31, 0.14);
+  border-color: rgba(232, 137, 168, 0.4);
+}
+
+/* ===== BLOB ===== */
+
+.cert-blob {
+  width: 86px;
+  height: 86px;
+  border-radius: 55% 45% 58% 42% / 50% 55% 45% 50%;
+  background: linear-gradient(160deg, #ffe3eb, #f6d9e4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.3rem;
+  transition: transform 0.4s ease, border-radius 0.6s ease;
+}
+
+.cert-card:hover .cert-blob {
+  transform: scale(1.08) rotate(-4deg);
+  border-radius: 45% 55% 42% 58% / 55% 48% 52% 45%;
+}
+
+/* ===== LOGO WORDMARKS ===== */
+
+.logo-mark {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.logo-img {
+  max-width: 68%;
+  max-height: 68%;
+  object-fit: contain;
+}
+
+.logo-google span {
+  font-size: 1.1rem;
+}
+
+.logo-aws {
+  color: #ff9900;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.logo-nptel {
+  color: #b3131d;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.logo-hp {
+  color: #0096d6;
+  font-size: 1.05rem;
+}
+
+.logo-hp-sub {
+  color: var(--dark);
+  font-weight: 700;
+  margin-left: 2px;
+  font-size: 0.7rem;
+  vertical-align: super;
+}
+
+.logo-deloitte {
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.logo-dot {
+  color: #86bc25;
+  font-size: 1.3rem;
+}
+
+.logo-codered {
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.logo-codered b {
+  color: #e8192c;
+}
+
+.logo-diamond {
+  color: #e8192c;
+  margin-right: 4px;
+}
+
+.logo-owasp {
+  color: var(--dark);
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo-cisco {
+  color: #049fd9;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.logo-pwc {
+  color: #0a1f4d;
+  background: linear-gradient(135deg, #d4af37, #0a1f4d 140%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.logo-mathworks {
+  color: #0076a8;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.logo-triangle {
+  color: #d95319;
+  font-size: 0.7rem;
+}
+
+.logo-mponline {
+  color: #c1121f;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.logo-tata {
+  color: #1b4b9c;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.logo-logitech {
+  color: #000;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* ===== TEXT ===== */
+
+.cert-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.4;
+}
+
+.cert-meta {
+  font-size: 0.8rem;
+  color: #9a8286;
+}
+
+/* ===== BUTTONS ===== */
+
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.btn-order {
+  background: var(--dark);
+  color: #fff;
+  padding: 9px 20px;
+  border: 1.5px solid var(--dark);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease, color 0.25s ease;
+}
+
+.btn-order:hover {
+  background: var(--rose);
+  border-color: var(--rose);
+  transform: translateY(-2px);
+}
+
+.btn-order.btn-view {
+  background: transparent;
+  color: var(--dark);
+}
+
+.btn-order.btn-view:hover {
+  background: var(--dark);
+  color: #fff;
+}
+
+.btn-order.disabled {
+  background: rgba(87, 3, 31, 0.15);
+  border-color: transparent;
+  color: rgba(87, 3, 31, 0.5);
+  cursor: default;
+  transform: none;
+}
+
+/* ===== LIGHTBOX ===== */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 0, 16, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 2rem;
+  animation: fade-in 0.25s ease;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  max-width: min(800px, 92vw);
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  animation: pop-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.9) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-caption {
+  font-size: 0.85rem;
+  color: var(--dark);
+  font-weight: 600;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--dark);
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--rose);
+  transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1000px) {
+  .certs-page {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 6% 5rem;
+  }
+  .certs-sidebar {
+    position: static;
+    flex: none;
+    width: 100%;
+  }
+  .issuer-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento-grid > * {
+    grid-column: span 1 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-card,
+  .cert-blob,
+  .btn-order,
+  .reset-btn {
+    transition: none !important;
+  }
+  .cert-card {
+    opacity: 1;
+    transform: none;
+  }
+}

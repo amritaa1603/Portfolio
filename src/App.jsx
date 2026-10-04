@@ -4,15 +4,16 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
 import Projects from "./components/Projects"
-
+import Cert from "./components/Cert"
 import Footer from './components/Footer'
+import Recognition from './components/Recognition'
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<><Home /><About /><Projects /></>} />
+        <Route path="/" element={<><Home /><About /><Projects /><Cert /><Recognition /></>} />
        
       
       </Routes>
